@@ -2,6 +2,10 @@ package com.example.data;
 
 import com.example.data.local.PreferencesHelper;
 import com.example.data.remote.SimpleService;
+import com.example.data.request.LoginRequest;
+import com.example.data.response.LoginResponse;
+import com.example.data.response.ReminderResponse;
+import io.reactivex.Observable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import org.jetbrains.annotations.Nullable;
@@ -18,13 +22,13 @@ public class DataManager {
         mPreferencesHelper = preferencesHelper;
     }
 
-    /*public Observable<ReminderResponse> getDataList(String type) {
+    public Observable<ReminderResponse> getDataList(String type) {
         return mSimpleService.getDataList(type);
     }
 
     public Observable<LoginResponse> doLogin(LoginRequest loginRequest) {
         return mSimpleService.doLogin(loginRequest);
-    }*/
+    }
 
     public void setIsLogged(boolean isLogged) {
         mPreferencesHelper.setLogged(isLogged);

@@ -1,29 +1,34 @@
 package com.example.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
 import com.example.databinding.ActivitySplashBinding
 import com.example.ui.base.BaseActivity
+import com.example.ui.login.LoginActivity
+import com.example.ui.main.MainActivity
 import javax.inject.Inject
 
 /**
  * Created by fatahfadhlurrohman on Fri, 04 Sep 2020
  */
-class SplashActivity : BaseActivity(), SplashMvpView {
+class SplashActivity : BaseActivity<ActivitySplashBinding>(), SplashMvpView {
 
     @Inject lateinit var mPresenter: SplashPresenter
 
-    private lateinit var mBinding: ActivitySplashBinding
+    override fun setDataBinding() {
+        mBinding = ActivitySplashBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityComponent().inject(this)
-        mBinding = ActivitySplashBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
 
         if (mPresenter.isLogged()) {
-            // TODO: open MainActivity
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         } else {
-            // TODO: do login first
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 

@@ -22,6 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
 
         <service android:name="com.example.data.SyncService"/>
 

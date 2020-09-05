@@ -1,23 +1,31 @@
 package com.example.data.remote;
 
+import com.example.data.request.LoginRequest;
+import com.example.data.response.LoginResponse;
+import com.example.data.response.ReminderResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.icapps.niddler.core.AndroidNiddler;
 import com.icapps.niddler.interceptor.okhttp.NiddlerOkHttpInterceptor;
+import io.reactivex.Observable;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface SimpleService {
 
     String ENDPOINT = "https://6b2b992c-377b-4fd2-a721-e9d66eb98bed.mock.pstmn.io/";
 
-    /*@POST("auth/login")
+    @POST("auth/login")
     Observable<LoginResponse> doLogin(@Body LoginRequest request);
 
     @GET("data/list")
-    Observable<ReminderResponse> getDataList(@Query("type") String type);*/
+    Observable<ReminderResponse> getDataList(@Query("type") String type);
 
     class Creator {
 

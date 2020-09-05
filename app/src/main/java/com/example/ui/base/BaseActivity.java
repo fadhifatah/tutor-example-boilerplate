@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.collection.LongSparseArray;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.viewbinding.ViewBinding;
 import java.util.concurrent.atomic.AtomicLong;
 
 import timber.log.Timber;
@@ -19,7 +20,7 @@ import com.example.injection.module.ActivityModule;
  * creation of Dagger components and makes sure that instances of ConfigPersistentComponent survive
  * across configuration changes.
  */
-public class BaseActivity extends AppCompatActivity {
+abstract public class BaseActivity<T extends ViewBinding> extends AppCompatActivity {
 
     private static final String KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID";
     private static final AtomicLong NEXT_ID = new AtomicLong(0);
@@ -28,6 +29,8 @@ public class BaseActivity extends AppCompatActivity {
 
     private ActivityComponent mActivityComponent;
     private long mActivityId;
+
+    public T mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,9 @@ public class BaseActivity extends AppCompatActivity {
         }
 
         mActivityComponent = configPersistentComponent.activityComponent(new ActivityModule(this));
+
+        setDataBinding();
+        setContentView(mBinding.getRoot());
     }
 
     @Override
@@ -71,4 +77,5 @@ public class BaseActivity extends AppCompatActivity {
         return mActivityComponent;
     }
 
+    abstract protected void setDataBinding();
 }
