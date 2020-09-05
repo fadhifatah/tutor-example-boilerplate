@@ -25,10 +25,10 @@
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.login.LoginActivity" />
 
-        <service android:name="com.example.data.SyncService"/>
+        <service android:name="com.example.data.service.SyncService"/>
 
         <receiver
-            android:name="com.example.data.SyncService$SyncOnConnectionAvailable"
+            android:name="com.example.data.service.SyncService$SyncOnConnectionAvailable"
             android:enabled="false">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" tools:ignore="BatteryLife" />

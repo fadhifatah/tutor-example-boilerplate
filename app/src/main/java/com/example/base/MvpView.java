@@ -1,4 +1,4 @@
-package com.example.ui.base;
+package com.example.base;
 
 
 /**

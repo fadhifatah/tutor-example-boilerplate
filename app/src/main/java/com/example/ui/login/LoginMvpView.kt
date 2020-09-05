@@ -1,7 +1,7 @@
 package com.example.ui.login
 
 import com.example.data.model.User
-import com.example.ui.base.MvpView
+import com.example.base.MvpView
 
 /**
  * Created by fatahfadhlurrohman on Thu, 03 Sep 2020

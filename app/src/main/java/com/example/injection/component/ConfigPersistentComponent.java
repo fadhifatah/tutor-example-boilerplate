@@ -4,7 +4,7 @@ import com.example.injection.module.FragmentModule;
 import dagger.Component;
 import com.example.injection.ConfigPersistent;
 import com.example.injection.module.ActivityModule;
-import com.example.ui.base.BaseActivity;
+import com.example.base.BaseActivity;
 
 /**
  * A dagger component that will live during the lifecycle of an Activity but it won't

@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import com.example.data.DataManager;
-import com.example.data.SyncService;
+import com.example.data.service.SyncService;
 import com.example.data.local.PreferencesHelper;
 import com.example.injection.ApplicationContext;
 import com.example.injection.module.ApplicationModule;

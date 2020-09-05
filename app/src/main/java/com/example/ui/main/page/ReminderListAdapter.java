@@ -1,21 +1,23 @@
-package com.example.ui.main;
+package com.example.ui.main.page;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.data.model.Reminder;
 import com.example.databinding.ItemReminderBinding;
+import com.example.injection.ApplicationContext;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 
-public class OngoingAdapter extends RecyclerView.Adapter<OngoingAdapter.ViewHolder> {
+public class ReminderListAdapter extends RecyclerView.Adapter<ReminderListAdapter.ViewHolder> {
 
     private List<Reminder> dataList;
 
     @Inject
-    public OngoingAdapter() {
+    public ReminderListAdapter(@ApplicationContext Context context) {
         dataList = new ArrayList<>();
     }
 

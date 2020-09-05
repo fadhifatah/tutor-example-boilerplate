@@ -2,6 +2,7 @@ package com.example.injection.component
 
 import com.example.injection.PerFragment
 import com.example.injection.module.FragmentModule
+import com.example.ui.main.page.ReminderFragment
 import dagger.Subcomponent
 
 /**
@@ -14,4 +15,6 @@ import dagger.Subcomponent
     ]
 )
 interface FragmentComponent {
+
+    fun inject(reminderFragment: ReminderFragment)
 }

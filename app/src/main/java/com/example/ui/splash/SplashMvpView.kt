@@ -1,6 +1,6 @@
 package com.example.ui.splash
 
-import com.example.ui.base.MvpView
+import com.example.base.MvpView
 
 /**
  * Created by fatahfadhlurrohman on Fri, 04 Sep 2020

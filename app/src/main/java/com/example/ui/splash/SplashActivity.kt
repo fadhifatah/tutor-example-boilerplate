@@ -3,7 +3,7 @@ package com.example.ui.splash
 import android.content.Intent
 import android.os.Bundle
 import com.example.databinding.ActivitySplashBinding
-import com.example.ui.base.BaseActivity
+import com.example.base.BaseActivity
 import com.example.ui.login.LoginActivity
 import com.example.ui.main.MainActivity
 import javax.inject.Inject
@@ -15,9 +15,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(), SplashMvpView {
 
     @Inject lateinit var mPresenter: SplashPresenter
 
-    override fun setDataBinding() {
-        mBinding = ActivitySplashBinding.inflate(layoutInflater)
-    }
+    override fun onCreateViewBinding() = ActivitySplashBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

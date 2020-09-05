@@ -5,7 +5,7 @@ import com.example.data.model.User
 import com.example.data.request.LoginRequest
 import com.example.data.response.LoginResponse
 import com.example.injection.ConfigPersistent
-import com.example.ui.base.BasePresenter
+import com.example.base.BasePresenter
 import com.google.gson.Gson
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +16,6 @@ import javax.inject.Inject
 /**
  * Created by fatahfadhlurrohman on Thu, 03 Sep 2020
  */
-@ConfigPersistent
 class LoginPresenter @Inject constructor(private val mDataManager: DataManager) : BasePresenter<LoginMvpView>() {
 
     fun doLogin(email: String, password: String) {

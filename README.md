@@ -1,3 +1,5 @@
+!Forked from Ribot Android Boilerplate!
+
 Thank you for your interest in ribot’s development work. Unfortunately there are no current plans to make any changes to this project in the near future, and it is not being maintained or updated. We hope you still find this a useful resource and you can check out the newest recommendations in [Android Jetpack](https://developer.android.com/jetpack/) for more ideas!
 
 # Android Boilerplate
@@ -11,7 +13,6 @@ Libraries and tools included:
 - [RxJava](https://github.com/ReactiveX/RxJava) and [RxAndroid](https://github.com/ReactiveX/RxAndroid) 
 - [Retrofit 2](http://square.github.io/retrofit/)
 - [Dagger 2](http://google.github.io/dagger/)
-- [Butterknife](https://github.com/JakeWharton/butterknife)
 - [Timber](https://github.com/JakeWharton/timber)
 - [Glide](https://github.com/bumptech/glide)
 - [Checkstyle](http://checkstyle.sourceforge.net/), [PMD](https://pmd.github.io/) and [Findbugs](http://findbugs.sourceforge.net/) for code analysis

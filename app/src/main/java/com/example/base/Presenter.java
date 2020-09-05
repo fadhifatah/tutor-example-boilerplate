@@ -1,4 +1,4 @@
-package com.example.ui.base;
+package com.example.base;
 
 /**
  * Every presenter in the app must either implement this interface or extend BasePresenter

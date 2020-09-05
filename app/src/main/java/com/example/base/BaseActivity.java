@@ -1,4 +1,4 @@
-package com.example.ui.base;
+package com.example.base;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -53,7 +53,7 @@ abstract public class BaseActivity<T extends ViewBinding> extends AppCompatActiv
 
         mActivityComponent = configPersistentComponent.activityComponent(new ActivityModule(this));
 
-        setDataBinding();
+        mBinding = onCreateViewBinding();
         setContentView(mBinding.getRoot());
     }
 
@@ -77,5 +77,12 @@ abstract public class BaseActivity<T extends ViewBinding> extends AppCompatActiv
         return mActivityComponent;
     }
 
-    abstract protected void setDataBinding();
+
+    /**
+     * Simply create ViewBinding of this Fragment by implement this method,
+     * then set mBinding = ...
+     *
+     * example: ActivityMainBinding.inflate(getLayoutInflater())
+     */
+    abstract protected T onCreateViewBinding();
 }

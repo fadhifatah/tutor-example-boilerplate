@@ -1,12 +1,13 @@
-package com.example.data;
+package com.example.data.service;
 
-import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.IBinder;
 
+import com.example.base.BaseService;
+import com.example.data.DataManager;
 import java.util.Objects;
 import javax.inject.Inject;
 
@@ -15,13 +16,9 @@ import com.example.BoilerplateApplication;
 import com.example.util.AndroidComponentUtil;
 import com.example.util.NetworkUtil;
 
-public class SyncService extends Service {
+public class SyncService extends BaseService {
 
     @Inject DataManager mDataManager;
-
-    public static Intent getStartIntent(Context context) {
-        return new Intent(context, SyncService.class);
-    }
 
     public static boolean isRunning(Context context) {
         return AndroidComponentUtil.isServiceRunning(context, SyncService.class);
@@ -65,7 +62,7 @@ public class SyncService extends Service {
                     && NetworkUtil.isNetworkConnected(context)) {
                 Timber.i("Connection is now available, triggering sync...");
                 AndroidComponentUtil.toggleComponent(context, this.getClass(), false);
-                context.startService(getStartIntent(context));
+                context.startService(BaseService.getStartIntent(context, SyncService.class));
             }
         }
     }

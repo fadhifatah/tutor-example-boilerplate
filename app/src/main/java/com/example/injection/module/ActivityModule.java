@@ -1,23 +1,22 @@
 package com.example.injection.module;
 
-import android.app.Activity;
 import android.content.Context;
-
+import androidx.fragment.app.FragmentActivity;
+import com.example.injection.ActivityContext;
 import dagger.Module;
 import dagger.Provides;
-import com.example.injection.ActivityContext;
 
 @Module
 public class ActivityModule {
 
-    private Activity mActivity;
+    private FragmentActivity mActivity;
 
-    public ActivityModule(Activity activity) {
+    public ActivityModule(FragmentActivity activity) {
         mActivity = activity;
     }
 
     @Provides
-    Activity provideActivity() {
+    FragmentActivity provideActivity() {
         return mActivity;
     }
 

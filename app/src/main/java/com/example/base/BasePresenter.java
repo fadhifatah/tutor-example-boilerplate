@@ -1,4 +1,4 @@
-package com.example.ui.base;
+package com.example.base;
 
 import androidx.annotation.NonNull;
 import com.example.util.RxUtil;
@@ -9,7 +9,7 @@ import io.reactivex.disposables.CompositeDisposable;
  * attachView() and detachView(). It also handles keeping a reference to the mvpView that
  * can be accessed from the children classes by calling getMvpView().
  */
-public class BasePresenter<T extends MvpView> implements Presenter<T> {
+abstract public class BasePresenter<T extends MvpView> implements Presenter<T> {
 
     private T mMvpView;
 

@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.data.model.User
 import com.example.databinding.ActivityLoginBinding
-import com.example.ui.base.BaseActivity
+import com.example.base.BaseActivity
 import com.example.ui.main.MainActivity
 import com.example.util.DialogFactory
 import javax.inject.Inject
@@ -19,9 +19,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginMvpView {
 
     private lateinit var mLoadingDialong: ProgressDialog
 
-    override fun setDataBinding() {
-        mBinding = ActivityLoginBinding.inflate(layoutInflater)
-    }
+    override fun onCreateViewBinding() = ActivityLoginBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@android:color/white"
     tools:context=".ui.main.MainActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -22,7 +22,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/iv_profile"
-        android:textSize="24sp"
+        android:textSize="20sp"
         tools:text="Full name here" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_name"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/iv_profile"
         android:textSize="14sp"
         tools:text="awesome status here" />
@@ -47,7 +47,20 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab_layout"
+        android:clipToPadding="false" />
+
+    <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_ongoing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,11 +68,5 @@
         android:clipToPadding="false"
         android:paddingBottom="6dp"
         android:paddingTop="6dp"
-        android:scrollbars="vertical" />
-
-    <include
-        android:id="@+id/layout_progress"
-        layout="@layout/view_loading"
-        tools:visibility="gone" />
-
+        android:scrollbars="vertical" />-->
 </RelativeLayout>
